@@ -1,0 +1,381 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: #faf8f4;
+  color: #111;
+  margin: 0;
+  line-height: 1.6;
+  padding-top: 50px; /* Avoid navbar overlap */
+}
+
+/* --- Top WSJ-style Navbar --- */
+.top-nav {
+  background-color: #111;
+  color: white;
+  font-family: 'Heebo', 'Retina', 'Helvetica', 'Arial', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid #333;
+}
+
+.top-nav ul {
+  display: flex;
+  justify-content: flex-start; /* Left aligned */
+  list-style: none;
+  margin: 0;
+  padding: 8px 20px;
+}
+
+.top-nav li {
+  margin-right: 25px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* --- Masthead --- */
+.masthead {
+  text-align: center;
+  border-bottom: 2px solid #111;
+  padding: 2rem 1rem 1rem;
+  background-color: #f5f3ef;
+}
+
+.masthead h1 {
+    font-family: 'Newsreader', 'Times New Roman', serif;
+    font-weight: 550;
+    font-size: 3.2rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.masthead .subtitle {
+  font-style: italic;
+  font-size: 1rem;
+  color: #444;
+}
+
+.newspaper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem 10%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.portrait-box {
+  text-align: center;
+  border: 1px solid #333;
+  padding: 1rem;
+  background-color: #fdfdfb;
+}
+
+.portrait-box img {
+  width: 100%;
+  border: 2px solid #000;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+/* --- Headings --- */
+.skills h2,
+.lead h2,
+.projects h2,
+.footer h2,
+.project h3 {
+  font-family: 'Newsreader', 'Times New Roman', serif;
+  font-weight: 500;
+  border-bottom: 1px solid #333;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills li {
+  margin: 0.4rem 0;
+}
+
+.project {
+  border-bottom: 1px dotted #555;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Project buttons */
+.project-links {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #222;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: #faf8f4;
+  color: #111;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #eae7e1;
+  border-color: #000;
+  transform: translateY(-1px);
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  border-top: 2px solid #111;
+  padding: 1.5rem;
+  background-color: #f5f3ef;
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer a:hover {
+  border-bottom: 1px solid #111;
+}
+
+/* --- Fade-in animation --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .newspaper {
+    grid-template-columns: 1fr;
+  }
+}
+.newspaper-header {
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #444;
+  margin-top: 0.5rem;
+}
+.thin-line {
+  border: none;
+  border-top: 1px solid #000;
+  width: 50%;
+  margin: 0.3rem auto 1.5rem;
+}
+/* =====================
+   Skills Section (Newspaper-style)
+   ===================== */
+.skills-section {
+  max-width: 380px;
+  margin: 2rem auto;
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  background-color: #fdfcf9;
+  padding: 1.5rem 1rem;
+}
+
+.skills-section h2 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.section-divider {
+  width: 60%;
+  margin: 0.5rem auto 1.5rem;
+  border: none;
+  border-top: 1px solid #333;
+}
+
+.skills-category {
+  margin-bottom: 1.6rem;
+}
+
+.skills-category h3 {
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #ccc;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.skills-list span {
+  font-family: 'Heebo', sans-serif;
+  font-size: 0.85rem;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.3px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.skills-list span:hover {
+  background-color: #111;
+  color: #fff;
+}
+/* =====================
+   Resume Download Link — Newspaper Style
+   ===================== */
+.resume-download {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-family: 'Newsreader', 'Times New Roman', serif;
+}
+
+.resume-link {
+  text-decoration: none;
+  color: #111;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 4px 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  transition: 0.2s ease;
+}
+
+.resume-link:hover {
+  text-decoration: underline;
+  color: #000;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.news-item {
+  border: 1px solid #ddd;
+  padding: 1.2rem;
+  background-color: #fdfcf9;
+  box-shadow: 2px 2px 0 #ccc;
+  transition: transform 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-3px);
+}
+
+.headline {
+  font-family: 'Newsreader', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0 0 0.3rem;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.subhead {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.story {
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.6;
+}
+
+.tech-stack {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #444;
+  margin-top: 0.6rem;
+}
+
+.btn-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #111;
+  border-bottom: 1px solid #111;
+  text-decoration: none;
+  margin-right: 0.8rem;
+  transition: color 0.2s;
+  font-family: 'Lora', serif;
+}
+
+.btn-link:hover {
+  color: #666;
+}
